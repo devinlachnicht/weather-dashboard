@@ -12,15 +12,17 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header class="container-fluid">
         <h1>Weather Dashboard</h1>
     </header>
 
     <section class="container-fluid">
         <section class="row">
-            <section class="col-lg-3 bg-light">
+            <!-- Search Container -->
+            <section class="col-lg-3">
                 <h3>Search for a City:</h3>
-                <section class="input-group">
+                <section class="input">
                     <input id="enter-city" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter a city"></input>
                     <section class="input-group-append">
                     </section>
@@ -30,7 +32,36 @@
                 <button class="btn btn-primary btn-block" type="button" id="clear-history">Clear History</button>
                 <form id="history"></form>
             </section>
-         
+            <!-- Current Weather Display -->
+            <section class="col-lg-9">
+                <section class="row">
+                    <section class="col-lg-11 card m-3 d-none" id="current-weather">
+                        <section class="card-body">
+                            <h3 id="city-name" class="city-name align-middle"></h3>
+                            <img id="icon" alt="">
+                            <p id="temp"></p>
+                            <p id="wind"></p>
+                            <p id="humidity"></p>
+                            <p id="UV-index"></p>
+                        </section>
+                    </section>
+                </section>
+                <!-- 5-Day Forecast Display -->
+                <section class="row d-none" id="fiveday-forecast">
+                    <section class="col-12">
+                        <h3>5-Day Forecast:</h3>
+                    </section>
+                </section>
+                <section class="row">
+                    <div class="col-md-2 five-day"></div>
+                    <div class="col-md-2 five-day"></div>
+                    <div class="col-md-2 five-day"></div>
+                    <div class="col-md-2 five-day"></div>
+                    <div class="col-md-2 five-day"></div>
+                </section>
+            </section>
+        </section>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="assets/js/script.js"></script>

@@ -29,3 +29,30 @@ header{
     background-color: silver;
     border-color: silver;
 }
+
+h3 {
+    font-weight: bold;
+    margin-top: 4px;
+    }
+    
+    .input {
+        margin-bottom: 10px;
+    }
+    
+    #search-button {
+        margin-bottom: 10px;
+    
+    }
+    
+    #clear-history {
+        margin-bottom: 10px;
+    
+    }
+    .five-day {
+        background-color: darkslateblue;
+        color: white;
+        margin: 10px;
+        border-radius: 5px;
+    }
+    
+    
