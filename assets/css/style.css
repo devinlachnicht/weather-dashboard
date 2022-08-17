@@ -1,0 +1,31 @@
+header{
+    background-image: linear-gradient(to right, moccasin, darkcyan , darkslateblue);
+    color: white;
+    text-align: center;
+    padding: 5px
+}
+
+.container-fluid h1 {
+    font-size: 45px;
+}
+
+.btn {
+    background-color: darkslateblue;
+    border-color: darkslateblue;
+}
+
+.btn:hover {
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+#history input{
+    background-color: darkgrey;
+    border-color: darkgrey;
+    margin-bottom: 10px;
+}
+
+#history input:hover {
+    background-color: silver;
+    border-color: silver;
+}
