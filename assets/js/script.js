@@ -27,18 +27,22 @@ function showWeather(cityName) {
                 var currentYear = currentDate.getFullYear();
                 cityNameEl.innerHTML = response.data.name + " (" + currentMonth + "/" + currentDay + "/" + currentYear + ") ";
                 
+                // Apllies weather icon respective to current weather
                 var weatherIcon = response.data.weather[0].icon;
                 icon.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
                 icon.setAttribute("alt", response.data.weather[0].description);
-            
+                
+                // Displays name of City entered as well as the current date
                 currentTemp.innerHTML = "Temp: " + random(response.data.main.temp) + " &#176F";
                 currentWind.innerHTML = "Wind: " + response.data.wind.speed + " MPH";
                 currentHumidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
-               
+                
+                // Gets UV Index
                 var lat = response.data.coord.lat;
                 var lon = response.data.coord.lon;
                 var uvIndexURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1";
 
+                // Changes badge color depending on how high or low UV Index
                 axios.get(uvIndexURL)
                     .then(function (response) {
                         var uvIndex = document.createElement("span");
@@ -58,6 +62,7 @@ function showWeather(cityName) {
                         uvIndexNow.append(uvIndex);
                     });
                 
+                // 5-Day Forecast
                 var citynameID = response.data.id;
                 var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + citynameID + "&appid=" + APIKey;
                 axios.get(fiveDayURL)
@@ -98,6 +103,7 @@ function showWeather(cityName) {
             });
     }
 
+    // Search button
     searchBtn.addEventListener("click", function () {
         const searchItem = enterCity.value;
         showWeather(searchItem);
@@ -106,10 +112,12 @@ function showWeather(cityName) {
         renderSearchesEl();
     })
 
+    // Temp Conversion
     function random(K) {
         return Math.floor((K - 273.15) * 1.8 + 32);
     }
 
+    // Creates history element and saves to localStorage
     function renderSearchesEl() {
         historySearch.innerHTML = "";
         for (var i = 0; i < searchesEl.length; i++) {
@@ -129,7 +137,8 @@ function showWeather(cityName) {
     if (searchesEl.length > 0) {
         showWeather(searchesEl[searchesEl.length - 1]);
     }
-   
+    
+    // Clears history 
     clearHistory.addEventListener("click", function () {
         localStorage.clear();
         searchesEl = [];
