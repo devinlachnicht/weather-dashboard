@@ -30,4 +30,4 @@ THEN I am again presented with current and future conditions for that city
 ![](./assets/images/weather-dash.png)
 
 ## Links
-<a href="" target="_blank">Deployed Application</a>
+<a href="https://devinlachnicht.github.io/weather-dashboard/" target="_blank">Deployed Application</a>
